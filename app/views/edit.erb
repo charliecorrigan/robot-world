@@ -1,0 +1,10 @@
+<img class="banner" src="https://printwallart.co.za/wp-content/uploads/2015/10/robot-boarder.png">
+<h1>Edit Robot</h1>
+<form action="/robots/<%= @robot.id %>" method="post">
+  <input type="hidden" name="_method" value="PUT" />
+  Robot Name: <input type="text" name="robot[name]" value="<%= @robot.name %>" /><br>
+  City: <input type="text" name="robot[city]" value="<%= @robot.city %>" /><br>
+  State: <input type="text" name="robot[state]" value="<%= @robot.state %>" /><br>
+  Department: <input type="text" name="robot[department]" value="<%= @robot.department %>" /><br>
+  <input type='submit' />
+</form>

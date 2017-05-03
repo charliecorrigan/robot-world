@@ -1,1 +1,16 @@
+<img class="banner" src="https://printwallart.co.za/wp-content/uploads/2015/10/robot-boarder.png">
 <h1>My Robots</h1>
+  <% @robots.each do |robot| %>
+  <div>
+    <img class="portrait" src="http://www.robohash.org/<%= robot.name %>">
+    <h2><a href="robots/<%=robot.id %>"><%= robot.name %></a></h2><br>
+    <button><a href="robots/<%=robot.id %>/edit">edit</a></button>
+    <form action="/robots/<%= robot.id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete"/>
+    </form>
+  </div>
+  <% end %>
+
+
+<nav><a href="/">Return to Robot World Home</a></nav>
